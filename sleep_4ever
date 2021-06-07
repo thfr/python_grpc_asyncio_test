@@ -1,0 +1,5 @@
+#!/bin/bash
+while true; do
+    sleep 5s
+    echo "Still alive, doing stuff"
+done

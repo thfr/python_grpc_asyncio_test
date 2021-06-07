@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message Empty
+{
+}
+
+message ActivationStatus
+{
+  enum Status {
+    ACTIVE = 0;
+    INACTIVE = 1;
+  }
+  Status current_status = 1;
+}
+
+service Activator
+{
+  rpc Toggle(Empty) returns (ActivationStatus);
+  rpc CurrentStatus(Empty) returns (ActivationStatus);
+  rpc StreamStatus(Empty) returns (stream ActivationStatus);
+}
